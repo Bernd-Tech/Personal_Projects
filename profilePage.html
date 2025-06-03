@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bernd's Profile Page</title>
+        <link rel="stylesheet" href="profilePage.css">
+        <script src="https://kit.fontawesome.com/7646516dd4.js" crossorigin="anonymous"></script>
+    </head>
+    <body id="home">
+        <header>
+            <nav id="nav-bar">
+                <div id="nav-container">
+                <ul id="nav-items">
+                    <li class="nav-item transition">About</li>
+                    <a href="#home" style="color: #000000; text-decoration: none"><li class="nav-item transition">Home</li></a>
+                    <li class="nav-item transition">Projects</li>
+                </ul>
+                </div>
+                <div id="icons">
+                <a href="mailto:berndtech@gmail.com">
+                    <i class="fa-solid fa-envelope transition"></i>
+                </a>
+                <a href="tel:0123456789">
+                    <i class="fa-solid fa-phone transition"></i>
+                </a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div id="profile-container">
+            <div id="picture-container">
+                <img src="/Bernd-profile.jpg" alt="Profile Picture of Bernd">
+            </div>
+            <div id="profile-info">
+                <div id="profile-description">
+                <h2>Bernd Pierre Louis</h2>
+                <div class="paragraph-container">
+                    <p>Aspiring Software Developer and UI/UX-Designer</p>
+                    <p><i class="fa-solid fa-map-pin"></i> Düsseldorf, Germany</p>
+                </div>
+                <div id="buttons">
+                <button id="follow-btn">Follow</button>
+                <button id="like-btn"><i class="fa-regular fa-thumbs-up"></i></button>
+                </div>
+                </div>
+                <div id="follow-container"> 
+                    <div>
+                    <p>Followers</p>
+                    <p class="follower-stats">0</p>
+                    </div>
+                    <div>
+                    <p>Following</p>
+                    <p class="follower-stats">0</p>
+                    </div>
+                    <div>
+                    <p>Likes</p>
+                    <p class="follower-stats">0</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div id="future-projects-container">
+                <p><strong>Future Projects</strong></p>
+                <div id="grid-container">
+                <div class="grid-items"></div>
+                <div class="grid-items"></div>
+                <div class="grid-items"></div>
+                </div>
+                </div>
+            </div>
+        </main>
+        <script src="profilePage.js"></script>
+    </body>
+</html>
