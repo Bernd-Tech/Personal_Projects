@@ -52,3 +52,4 @@ const fetchUser = async () => {
 }
 
 generateUserBtn.addEventListener("click", fetchUser)
+window.onload = fetchUser;
