@@ -67,7 +67,7 @@ const filterUserName = () => {
     displayUsers(filteredUser)
 }
 
-//filters fetched users based on selected country.
+//filters fetched users based on selected. For case-insensitive approach I used toLowercase()
 const filterNationality = () => {
   const targetUsers = nationalityDropDown.value.toLowerCase();
   const filteredUsers = users.filter((u) => { 
