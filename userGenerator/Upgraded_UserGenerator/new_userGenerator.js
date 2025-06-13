@@ -57,6 +57,7 @@ const displayUsers = (userArray) => {
     userStatsContainer.style.display = "flex";
 }
 
+//filters fetched users based on entered value in search input field. For case-insensitive approach I used toLowercase()
 const filterUserName = () => {
     const targetUser = userSearchInput.value.toLowerCase();
     const filteredUser = users.filter((u) => {
@@ -66,6 +67,7 @@ const filterUserName = () => {
     displayUsers(filteredUser)
 }
 
+//filters fetched users based on selected country.
 const filterNationality = () => {
   const targetUsers = nationalityDropDown.value.toLowerCase();
   const filteredUsers = users.filter((u) => { 
@@ -79,6 +81,7 @@ const filterNationality = () => {
     }
 }
 
+//Accesses gender value of fetched users array -> adds the amount with each iteration/loop in genderCount object -> redefines inner HTML of "gender" divs
 const countGender = (userArray) => {
   
   let genderCount = {
@@ -101,13 +104,13 @@ const countGender = (userArray) => {
     }
   })
 
-  // for (const userGenderAmount in genderCount) {
     maleCount.innerHTML = `<i class="fa-solid fa-mars gender"> : ${genderCount.male}</i>`;
     femaleCount.innerHTML = `<i class="fa-solid fa-venus gender"> : ${genderCount.female}</i>`;
     diversCount.innerHTML = `<i class="fa-solid fa-genderless gender"> : ${genderCount.divers}</i>`;
-  // }
+
 }
 
+// Calculates average age of fetched users
 const calculateAverageAge = (userArray) => {
   let sum = 0;
   userArray.forEach((u) => {
@@ -123,6 +126,7 @@ fetchSingleUserBtn.addEventListener("click", () => {fetchRandomUsers(1)})
 userSearchInput.addEventListener("input", filterUserName)
 nationalityDropDown.addEventListener("change", filterNationality)
 
+// switches between default and .dark color theme
 toggleThemeBtn.addEventListener("click", () => {
   document.body.classList.toggle("dark");
 
@@ -136,6 +140,7 @@ toggleThemeBtn.addEventListener("click", () => {
   }
 })
 
+// dynamically loading axios via CDN
 const script = document.createElement("script");
 script.src = "https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js";
 document.head.appendChild(script);
