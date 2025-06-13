@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upgraded User Generator</title>
+    <link rel="stylesheet" href="new_userGenerator.css">
+    <script src="https://kit.fontawesome.com/7646516dd4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="filter-container">
+    <input type="text" name="search-value" id="user-search" placeholder="Filter name..." />
+    <select name="nationality-filter" id="nationality-filter">
+        <option value="Default">Filter country</option>
+        <option value="Haiti">Haiti</option>
+        <option value="Germany">Germany</option>
+        <option value="Cuba">Cuba</option>
+        <option value="Denmark">Denmark</option>
+        <option value="Spain">Spain</option>
+        <option value="United States">USA</option>
+        <option value="United Kingdom">UK</option>
+        <option value="Norway">Norway</option>
+        <option value="France">France</option>
+    </select>
+    </div>
+    <div id="button-container">
+        <button id="fetch-multiple-btn">fetch 10 users</button>
+        <button id="fetch-one-btn">fetch 1 user</button>
+    </div>
+    <div id="user-container">
+
+    </div>
+    <div id="user-stats-container">
+    <div id="gender-count-container">
+        <div id="male-count"></div>
+        <div id="female-count"></div>
+        <div id="divers-count"></div>
+    </div>
+    <div id="average-age"></div>
+    </div>
+    <button id="toggle-theme"><i class="fa-regular fa-moon"></i></button>
+    <script src="new_userGenerator.js"></script>
+</body>
+</html>
