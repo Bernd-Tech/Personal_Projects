@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splice Exercise</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&display=swap');
+
+        * {
+            border-radius: 5px;
+            padding: 5px;
+            font-family: "Figtree", sans-serif;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 80px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        #addToCartBtn {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            transition: 0.2s ease;
+        }
+
+         #addToCartBtn:hover {
+            background-color: #007bff;
+            transform: scale(1.05);
+        }
+
+        #shopping-list {
+            list-style: none;
+        }
+
+        li {
+            background-color: #e8f1f8;
+            width: 300px;
+            margin: 10px auto;
+            padding: 5px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.2s ease;
+        }
+
+        li:hover {
+            border-left: 4px solid #4d84bb;
+        }
+
+        li button {
+            margin-left: 15px;
+            background-color: #dc3545;
+            color: #ffffff;
+            border: none;
+        }
+
+        li button:hover {
+            background-color: #c42132;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mini Shopping Cart</h1>
+    <input type="text" name="item-name" id="item-name" placeholder="Enter an item...">
+    <input type="number" min="0" name="price" id="item-price" placeholder="Enter a price...">
+    <button id="addToCartBtn">Add to Cart</button>
+    <ul id="shopping-list">
+
+    </ul>
+    <h2>Total: $<span id="total-price">0</span></h2>
+    <script src="spliceTask.js"></script>
+</body>
+</html>
