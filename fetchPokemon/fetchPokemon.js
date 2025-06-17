@@ -1,6 +1,9 @@
 const pokemonSearchInput = document.getElementById("pokemon-search-input");
 const pokemonDisplayContainer = document.getElementById("pokemon-display-container");
 const fetchBtn = document.getElementById("fetch-btn");
+const pokemonCard = document.createElement("div");
+pokemonCard.classList.add("pokemon-card");
+const pokeInfo = document.createElement("div");
 
 const fetchPokemon = async () => {
     try {
@@ -18,7 +21,8 @@ const fetchPokemon = async () => {
         pokemonSearchInput.value = "";
 
     } catch (error) {
-        console.error(`${error}: Pokemon could not be loaded`)
+        console.error(`${error}: Pokemon could not be loaded`);
+        pokemonDisplayContainer.innerText = "Response undefined: Pokemon could not be loaded.";
     }
 }
 
@@ -33,9 +37,6 @@ const displayPokemon = (pokeObject) => {
         types.push(target)
     })
     console.log(types)
-
-    const pokemonCard = document.createElement("div");
-    pokemonCard.classList.add("pokemon-card");
     
     const imgContainer = document.createElement("div");
     const pokemonImg = document.createElement("img");
@@ -43,25 +44,63 @@ const displayPokemon = (pokeObject) => {
     pokemonImg.alt = pokeObject.name;
     imgContainer.appendChild(pokemonImg);
 
-    const pokeInfo = document.createElement("div");
+    pokeInfo.style.display = "flex";
+    pokeInfo.style.flexDirection = "column";
+    pokeInfo.style.gap = "5px";
     pokeInfo.innerHTML = `
-        <p>Height: ${pokeObject.height}</p>
+        <p>Height: ${(pokeObject.height / 10).toFixed(2) + "m"}</p>
         <p>Weight: ${pokeObject.weight}</p>
     `;
 
-    types.forEach((type) => {
-        const typeInfo = document.createElement("p");
-        typeInfo.textContent = `Types: ${type}`;
-        pokeInfo.appendChild(typeInfo);
-    })
+    const typeInfo = document.createElement("p");
+    typeInfo.innerText = `Types: ${[...types].join(", ")}`;
+
+    // types.forEach((type) => {
+    //     const individualType = document.createElement("span")
+    //     individualType.textContent = type;
+    //     typeInfo.appendChild(individualType);
+    // })
+    pokeInfo.appendChild(typeInfo);
 
     pokemonCard.innerHTML = `
     <p>${name}</p>
     `;
     pokemonCard.appendChild(imgContainer);
     pokemonCard.appendChild(pokeInfo);
+    playPokemonCry(pokeObject);
     pokemonDisplayContainer.appendChild(pokemonCard)
 
+}
+
+const playPokemonCry = (object) => {
+    const cryContainer = document.createElement("div");
+    cryContainer.style.display = "flex";
+    cryContainer.style.gap = "10px";
+    const sounds = Object.entries(object.cries);
+
+    if(!sounds) {
+        console.log("No sound available.");
+        return;
+    }
+
+    // Using array destructuring to locally declare varibales that store sound's two-element arrays as values
+    sounds.forEach(([cryName, sound]) => {
+        
+        if(!sound) {
+          console.log("No sound available.");
+          return;
+        }
+
+        const cryBtn = document.createElement("button");
+        const cry = new Audio(sound);
+        cryBtn.innerText = cryName + " cry";
+        // using addEventListener and not .onclick property because otherwise will play sound when fetchPokemon() is called!
+        cryBtn.addEventListener("click", () => {
+            cry.play()
+        })
+        cryContainer.appendChild(cryBtn);
+    })
+    pokeInfo.appendChild(cryContainer);
 }
 
 fetchBtn.addEventListener("click", fetchPokemon)
