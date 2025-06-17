@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Figtree", sans-serif;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin: 40px 0;
+}
+
+#quote {
+    text-align: center;
+    font-style: italic;
+    line-height: 30px;
+}
+
+#pokemon-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    gap: 20px;
+}
+
+#pokemon-search-input {
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#fetch-btn {
+
+}
+
+#pokemon-display-container {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pokemon-card {
+    border: 1px solid;
+    border-radius: 10px;
+   width: 240px;
+   height: 335px;
+   display: flex;
+   flex-direction: column; 
+   align-items: center;
+   justify-content: center;
+}
