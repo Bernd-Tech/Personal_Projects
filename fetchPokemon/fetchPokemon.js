@@ -63,7 +63,7 @@ const displayPokemon = (pokeObject) => {
     pokeInfo.appendChild(typeInfo);
 
     pokemonCard.innerHTML = `
-    <p>${name}</p>
+    <p>${name} #${pokeObject.id}</p>
     `;
     pokemonCard.appendChild(imgContainer);
     pokemonCard.appendChild(pokeInfo);
