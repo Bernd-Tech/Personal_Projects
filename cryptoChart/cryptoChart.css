@@ -1,0 +1,48 @@
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+#loader-container {
+    width: 110px;
+    height: 130px;
+    margin: 150px auto;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* border: 3px solid;
+    border-left-color: transparent;
+    animation: spin 2s linear infinite; */
+    background-color: #343a40;
+    animation: grow-fade 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes grow-fade {
+    0% {
+        transform: scale(0.2);
+        opacity: 0;
+    }
+
+    75% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
