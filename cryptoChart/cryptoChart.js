@@ -29,6 +29,7 @@ const api = axios.create({
 const coins = ["bitcoin", "ethereum"];
 
 const fetchData = async () => {
+    chartSection.innerHTML = "";
     loader.style.display = "flex";
 
     try {
@@ -38,21 +39,26 @@ const fetchData = async () => {
                 const prices = response.data.data.prices.hour.prices.slice(0, 24);
                 // console.log(prices)
 
+                //sorted timestamps array
                 const labels = prices.map(([, timestamp]) => 
-                    new Date(timestamp * 1000).toLocaleTimeString()
-                )
+                    timestamp * 1000
+                ).sort((a, b) => a - b);
+                console.log(labels)
+
+                const sortedTimeLabels = labels.map((label) => 
+                    new Date(label).toLocaleTimeString()
+                );
+                console.log(sortedTimeLabels)
 
                 const data = prices.map(([price]) => Number(price))
-                return {coinId: coin, labels, data, symbol: response.data.data.base}
+                return {coinId: coin, sortedTimeLabels, data, symbol: response.data.data.base}
             })
         )
         loader.style.display = "none";
 
-        responses.forEach((res) => {
-
-            const chart = createChart(res.coinId, res.labels, res.data, res.symbol);
-            
-        })
+        responses.forEach((res) => 
+            createChart(res.coinId, res.sortedTimeLabels, res.data, res.symbol)
+        )
         console.log(responses)
     } catch (error) {
         loader.style.display = "none";
@@ -76,11 +82,31 @@ const createChart = (coinId, labels, data, symbol) => {
             }]
         },
         options: {
+            animations: true,
             fill: true,
+            plugins: {
+                tooltip: {
+                    intersect: true
+                }
+            },
+            scales: {
+            y: {
+                title: {
+                    text: "Price in US$",
+                    display: true
+                }
+            }
+        }
         }
     })
     chartSection.appendChild(canvas);
 }
 
+// fetchData()
 
-fetchData()
+// const fetchCall = setInterval(fetchData, 10000)
+
+// setTimeout(() => {clearInterval(fetchCall),
+//     console.log("fetchCall has been stopped.")
+// }, 30000)
+
