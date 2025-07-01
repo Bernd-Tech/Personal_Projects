@@ -21,12 +21,13 @@
 
 const loader = document.getElementById("loader-container");
 const chartSection = document.getElementById("chart-section");
+const fetchDataBtn = document.getElementById("fetch-data-btn");
 
 const api = axios.create({
     baseURL: "https://api.coinbase.com/v2/assets/prices"
 })
 
-const coins = ["bitcoin", "ethereum"];
+const coins = ["bitcoin", "ethereum", "litecoin"];
 
 const fetchData = async () => {
     chartSection.innerHTML = "";
@@ -102,11 +103,10 @@ const createChart = (coinId, labels, data, symbol) => {
     chartSection.appendChild(canvas);
 }
 
-// fetchData()
+fetchDataBtn.addEventListener("click", () => {
+    fetchData();
+    const repeatedCall = setInterval(fetchData, 10000);
 
-// const fetchCall = setInterval(fetchData, 10000)
-
-// setTimeout(() => {clearInterval(fetchCall),
-//     console.log("fetchCall has been stopped.")
-// }, 30000)
+    setTimeout(() => clearInterval(repeatedCall), 35000)
+})
 

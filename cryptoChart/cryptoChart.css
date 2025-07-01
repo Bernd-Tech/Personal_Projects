@@ -46,3 +46,9 @@ body {
         opacity: 0;
     }
 }
+
+#fetch-data-btn {
+    margin: 30px auto;
+    display: block;
+    scale: 0.9;
+}
