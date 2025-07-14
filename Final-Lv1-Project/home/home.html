@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Dashboard</title>
+    <link rel="stylesheet" href="home.css">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.27/build/spline-viewer.js"></script>
+</head>
+<body>
+    <div id="spline-container">
+    <spline-viewer url="https://prod.spline.design/tBmXEUhM01qAy2Zf/scene.splinecode"></spline-viewer>    </div>
+    <div id="hero-section">
+        <nav id ="nav-bar" class="glass-effect">
+            <a href="#hero-section">Home</a>
+            <a href="">Weather</a>
+            <!-- The ../ means "go up one directory level" from the home folder, then into the tasks folder. -->
+            <a href="../tasks/tasks.html">Tasks</a>
+            <a href="../notes/notes.html">Notes</a>
+        </nav>
+        <div id="greeting-container">
+            <h1 id="greeting">Good evening, Bernd!</h1>
+        </div>
+    </div>
+    <script src="home.js"></script>
+</body>
+</html>

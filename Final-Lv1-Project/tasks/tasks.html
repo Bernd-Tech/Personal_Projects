@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="tasks.css">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.27/build/spline-viewer.js"></script>
+</head>
+<body>
+    <div id="spline-container">
+    <spline-viewer url="https://prod.spline.design/sab172SeEYs57fYO/scene.splinecode"></spline-viewer>
+    </div>
+    <div id="user-interface-section">
+        <nav id ="nav-bar" class="glass-effect">
+            <a href="../home/home.html">Home</a>
+            <a href="">Weather</a>
+            <!-- The ../ means "go up one directory level" from the home folder, then into the tasks folder. -->
+            <a href="">Tasks</a>
+            <a href="../notes/notes.html">Notes</a>
+        </nav>
+        <div id="tasks-container">
+            <div id="user-input-container">
+            <input id="user-input" type="text" placeholder="Add a task...">
+            <button id="addTask-btn">+</button>
+            </div>
+            <ul id="taskList"></ul>
+        </div>
+    </div>
+    <script src="tasks.js"></script>
+</body>
+</html>
