@@ -43,3 +43,5 @@ addTaskBtn.addEventListener("click", addTask)
 userInput.addEventListener("keydown", (e) => {
     e.key === "Enter" ? addTask() : null;
 })
+
+document.addEventListener("DOMContentLoaded", displayTasks);

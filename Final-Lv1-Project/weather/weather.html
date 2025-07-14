@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Dashboard/Tasks</title>
-    <link rel="stylesheet" href="tasks.css">
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.27/build/spline-viewer.js"></script>
+    <title>Personal Dashboard/Weather</title>
+    <link rel="stylesheet" href="weather.css">
+    <!-- <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.27/build/spline-viewer.js"></script> -->
 </head>
 <body>
-    <div id="spline-container">
+    <!-- <div id="spline-container">
     <spline-viewer url="https://prod.spline.design/sab172SeEYs57fYO/scene.splinecode"></spline-viewer>
-    </div>
+    </div> -->
     <div id="user-interface-section">
         <nav id ="nav-bar" class="glass-effect">
             <a href="../home/home.html">Home</a>
             <a href="">Weather</a>
-            <!-- The ../ means "go up one directory level" from the home folder, then into the tasks folder. -->
-            <a href="">Tasks</a>
+            <a href="../tasks/tasks.html">Tasks</a>
             <a href="../notes/notes.html">Notes</a>
         </nav>
         <div id="tasks-container">
@@ -27,6 +26,6 @@
             <ul id="taskList"></ul>
         </div>
     </div>
-    <script src="tasks.js"></script>
+    <script src="weather.js"></script>
 </body>
 </html>

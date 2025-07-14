@@ -3,14 +3,14 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0
+    padding: 0;
+    font-family: "Figtree", sans-serif;
 }
 
 body {
     height: 100vh;
     max-height: 100vh;
     width: 100vw;
-    font-family: "Figtree", sans-serif;
     color: #333333;
 }
 
@@ -22,6 +22,7 @@ body {
 }
 
 #user-interface-section {
+    border: 1px solid;
     width: 100%;
     height: 100%;
     padding: 20px 15px;
@@ -72,46 +73,85 @@ a:hover {
 }
 
 #notes-container {
+    /* Needs defined hight for scroll feature in notes collection can work */
+    height: 650px;
     padding: 30px;
     margin: 20px 0;
-    height: 100%;
-    max-height: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    justify-content: space-between;
+    gap: 30px;
 }
 
 #user-input-container {
-    width: 100%;
+    flex: 1;
     display: flex;
     justify-content: center;
     gap: 15px;
 }
 
 #user-note-input {
-    width: 400px;
+    width: 300px;
+    height: 100%;
+    resize: none;
     border-radius: 15px;
-    padding: 10px;
+    padding: 15px;
+    border: none;
+}
+
+#addNote-btn {
+    height: 90px;
+    width: 40px;
+    border-radius: 10px;
+    border: none;
+    transition: 200ms ease-in-out;
+}
+
+#addNote-btn:hover {
+    height: 150px;
+    backdrop-filter: blur(3px);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    cursor: pointer;
 }
 
 #note-collection {
-    margin-top: 15px;
+    flex: 3;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    align-items: flex-start;
     gap: 20px;
-}
+    align-content: flex-start;
+    overflow-y: auto;
+    padding: 5px;
+} 
 
 #note-collection textarea {
-    transition: transform 300ms ease-in-out;
+    transition: transform 200ms ease-in-out;
     font-size: 16px;
+    box-shadow: 19px 13px 8px rgba(51, 51, 51, 0.3);
+    margin: 0;
+    padding: 15px;
+    /* animation: note-grow 200ms forwards; */
 }
 
 #note-collection textarea:hover {
-    transform: translateX(2%);
+    transform: scale(1.04);
 }
 
 textarea:focus {
     outline: none;
 }
+
+.note-container {
+    margin: 0px;
+}
+
+/* Need to find a way to animate only the newly added note. Becaue of displayNotes() container gets reloaded with every added note. */
+/* @keyframes note-grow {
+    from {
+        scale: 0
+    }
+    to {
+        scale: 1;
+    }
+} */

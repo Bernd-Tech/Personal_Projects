@@ -22,6 +22,7 @@ const displayNotes = () => {
 
     storedNotes.forEach((note, index) => {
         const noteContainer = document.createElement("div");
+        noteContainer.className = "note-container";
 
         const removeNoteBtn = document.createElement("button");
         removeNoteBtn.innerText = "Delete";
@@ -29,7 +30,7 @@ const displayNotes = () => {
         const noteItem = document.createElement("textarea");
         noteItem.value = note;
         noteItem.classList.add("black-glass-effect");
-        
+
         removeNoteBtn.addEventListener("click", () => {
             removeNote(index);
         })
@@ -50,6 +51,4 @@ const removeNote = (noteIndex) => {
 
 addNoteBtn.addEventListener("click", addNote)
 
-userNoteInput.addEventListener("keydown", (e) => {
-    e.key === "Enter" ? addNote() : null;
-})
+document.addEventListener("DOMContentLoaded", displayNotes)
