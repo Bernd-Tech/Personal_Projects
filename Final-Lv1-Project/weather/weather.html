@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Dashboard/Weather</title>
     <link rel="stylesheet" href="weather.css">
+    <script src=" https://cdn.jsdelivr.net/npm/axios@1.10.0/dist/axios.min.js "></script>
     <!-- <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.27/build/spline-viewer.js"></script> -->
 </head>
 <body>
@@ -18,12 +19,52 @@
             <a href="../tasks/tasks.html">Tasks</a>
             <a href="../notes/notes.html">Notes</a>
         </nav>
-        <div id="tasks-container">
+        <div id="weather-section">
             <div id="user-input-container">
-            <input id="user-input" type="text" placeholder="Add a task...">
-            <button id="addTask-btn">+</button>
+                <input id="user-input" class="glass-effect" type="text" placeholder="Enter city...">
             </div>
-            <ul id="taskList"></ul>
+            <div id="weather-display-container" class="black-glass-effect">
+
+                <div class="weather-container">
+        <div class="header">
+            <h1>Los Angeles</h1>
+        </div>
+        
+        <div class="current-weather">
+            <div class="weather-main">
+                <div class="weather-icon"><img src="https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/sleet.svg" alt=""></div>
+                <div class="temperature">12.8°C</div>
+                <div class="description">Clear Sky</div>
+            </div>
+            
+            <div class="weather-details">
+                <div class="detail-item">
+                    <span class="detail-icon">💧</span>
+                    <span>32%</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-icon">💨</span>
+                    <span>12 km/h</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="forecast-section">
+            <div class="forecast-title">Daily Forecast</div>
+            <div class="forecast-container">
+                
+                <div class="forecast-item">
+                    <div class="forecast-icon">Weather Icon</div>
+                    <div class="forecast-temp">Temp.</div>
+                    <div class="forecast-low">Low Temp.</div>
+                    <div class="forecast-date">Datum</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+            </div>
         </div>
     </div>
     <script src="weather.js"></script>

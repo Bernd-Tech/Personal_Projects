@@ -83,6 +83,7 @@ a:hover {
 }
 
 #user-input-container {
+    padding-top: 5px; 
     flex: 1;
     display: flex;
     justify-content: center;
