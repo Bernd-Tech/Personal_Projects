@@ -106,146 +106,144 @@ a:hover {
     /* overflow-y: scroll; */
 }
 
-/* Generated CODE */
+.header {
+    text-align: center;
+    margin-bottom: 5px;
+}
 
-        .header {
-            text-align: center;
-            margin-bottom: 5px;
-        }
+.header h1 {
+    font-size: 24px;
+    color: #bab9b9;
+    font-weight: 600;
+}
 
-        .header h1 {
-            font-size: 24px;
-            color: #bab9b9;
-            font-weight: 600;
-        }
+.current-weather {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom: 5px; */
+    padding: 20px 0;
+}
 
-        .current-weather {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px;
-            padding: 20px 0;
-        }
+#current-weather-icon-container {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
 
-        #current-weather-icon-container {
-            width: 100px;
-            height: 100px;
-            margin-right: 20px;
-        }
+#current-temperature {
+    font-size: 48px;
+    font-weight: 300;
+    color: #333;
+    margin-bottom: 5px;
+}
 
-        #current-temperature {
-            font-size: 48px;
-            font-weight: 300;
-            color: #333;
-            margin-bottom: 5px;
-        }
+#current-weather-description {
+    color: rgba(255, 255, 255, 0.85);;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+        
+#weather-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 15px;
+    text-align: right;
+}
 
-        #current-weather-description{
-            color: rgba(255, 255, 255, 0.85);;
-            font-size: 16px;
-            text-transform: capitalize;
-        }
+.detail-item {
+    /* border: 1px solid white; */
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    color: white;
+}
 
-        #weather-details-container {
-            display: flex;
-            flex-direction: column;
-            align-items: end;
-            gap: 15px;
-            text-align: right;
-        }
+.detail-icon {
+    font-size: 15px;
+    /* border: 1px solid white; */
+    height: 45px;
+    width: 45px;
+}
 
-        .detail-item{
-            /* border: 1px solid white; */
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 14px;
-            color: white;
-        }
+.forecast-section {
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-        .detail-icon {
-            font-size: 15px;
-            /* border: 1px solid white; */
-            height: 45px;
-            width: 45px;
-        }
+.forecast-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
 
-        .forecast-section {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+#forecast-container {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+}
 
-        .forecast-title {
-            font-size: 20px;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 20px;
-            text-align: center;
-        }
+.forecast-item {
+    background: rgba(116, 185, 255, 0.1);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    min-width: 120px;
+    flex-shrink: 0;
+}
 
-        #forecast-container {
-            width: 100%;
-            margin-top: 20px;
-            display: flex;
-            gap: 10px;
-            overflow-x: scroll;
-            scroll-behavior: smooth;
-        }
+.forecast-item:hover {
+    transform: translateY(-5px);
+    background: rgba(116, 185, 255, 0.2);
+}
 
-        .forecast-item {
-            background: rgba(116, 185, 255, 0.1);
-            border-radius: 15px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 15px 10px;
-            text-align: center;
-            transition: transform 0.3s ease;
-            min-width: 120px;
-            flex-shrink: 0;
-        }
+.forecast-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 24px;
+    margin-bottom: 8px;
+}
 
-        .forecast-item:hover {
-            transform: translateY(-5px);
-            background: rgba(116, 185, 255, 0.2);
-        }
+.forecast-temp-container {
+    display: flex;
+    flex-direction: column;
+    width: 70px;
+    border-radius: 5px;
+    overflow: hidden;
+}
 
-        .forecast-icon {
-            width: 80px;
-            height: 80px;
-            font-size: 24px;
-            margin-bottom: 8px;
-        }
+.forecast-min-temp {
+    padding: 3px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(3px);
+    background-color: rgba(0, 0, 0, 0.5);
+}
 
-        .forecast-temp-container {
-            display: flex;
-            flex-direction: column;
-            width: 70px;
-            border-radius: 5px;
-            overflow: hidden;
-        }
+.forecast-max-temp {
+    padding: 3px 0;
+    font-size: 14px;
+    color: #333;
+    backdrop-filter: blur(3px);
+    background-color: rgba(255, 255, 255, 0.5);
+}
 
-        .forecast-min-temp {
-            padding: 3px 0;
-            font-size: 14px;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(3px);
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        .forecast-max-temp {
-            padding: 3px 0;
-            font-size: 14px;
-            color: #333;
-            backdrop-filter: blur(3px);
-            background-color: rgba(255, 255, 255, 0.5);
-        }
-
-        .forecast-date {
-            margin-top: 5px;
-            font-size: 10px;
-            color: #888;
-        }
+.forecast-date {
+    margin-top: 5px;
+    font-size: 10px;
+    color: #888;
+}
