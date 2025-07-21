@@ -68,8 +68,8 @@ a:hover {
     backdrop-filter: blur(3px);
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    height: 150px;
-    width: 250px;
+    /* height: 150px;
+    width: 250px; */
     color: #ffffff;
 }
 
@@ -99,36 +99,78 @@ a:hover {
 }
 
 #weather-display-container {
-    width: 600px;
     height: 500px;
+    width: 900px;
+    display: none;
+    gap: 10px;
+}
+
+#first-half {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#city-title-div {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 4px 6px 7px rgba(51, 51, 51, 0.55);
+}
+
+.region {
+    font-size: 14px;
+    /* font-weight: normal; */
+    vertical-align: super;
+}
+
+#current-weather-container {
+    flex: 8;
     border-radius: 20px;
     padding: 20px;
-    /* overflow-y: scroll; */
-}
-
-.header {
-    text-align: center;
-    margin-bottom: 5px;
-}
-
-.header h1 {
-    font-size: 24px;
-    color: #bab9b9;
-    font-weight: 600;
+    box-shadow: 4px 6px 7px rgba(51, 51, 51, 0.55);
 }
 
 .current-weather {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#main-weather {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    /* margin-bottom: 5px; */
-    padding: 20px 0;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+#current-weather-info {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
 }
 
 #current-weather-icon-container {
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
+    width: 140px;
+    flex-shrink: 0;
+}
+
+#current-weather-description {
+    text-align: center;
+    display: inline;
+    color: #333;
+    font-size: 16px;
+    text-transform: capitalize;
+    padding: 3px;
+    border-radius: 5px;
+    backdrop-filter: blur(3px);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 #current-temperature {
@@ -136,60 +178,72 @@ a:hover {
     font-weight: 300;
     color: #333;
     margin-bottom: 5px;
-}
-
-#current-weather-description {
-    color: rgba(255, 255, 255, 0.85);;
-    font-size: 16px;
-    text-transform: capitalize;
+    margin-top: 20px;
 }
         
 #weather-details-container {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: end;
-    gap: 15px;
-    text-align: right;
+}
+
+.detail-item-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .detail-item {
     /* border: 1px solid white; */
     display: flex;
     align-items: center;
-    gap: 5px;
+    /* gap: 5px; */
     font-size: 14px;
     color: white;
 }
 
 .detail-icon {
-    font-size: 15px;
     /* border: 1px solid white; */
-    height: 45px;
-    width: 45px;
+    height: 50px;
+    width: 50px;
 }
 
 .forecast-section {
-    border: 1px solid white;
+    padding: 20px;
+    flex: 2;
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-
-.forecast-title {
-    font-size: 20px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 20px;
-    text-align: center;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-shadow: 4px 6px 7px rgba(51, 51, 51, 0.55);
 }
 
 #forecast-container {
-    width: 100%;
+    padding: 10px 0;
+    /* note: container needs fixed width, otherwise stretches out the parent flex-container */
+    width: 500px;
     margin-top: 20px;
     display: flex;
     gap: 10px;
     overflow-x: scroll;
     scroll-behavior: smooth;
+    /* Mozilla scrollbar styling, unfortunately very limited */
+    scrollbar-width: thin; 
+    scrollbar-color: rgba(255, 255, 255, 0.5) transparent; /* thumb-color track-color */
+}
+
+#forecast-container::-webkit-scrollbar-track {
+    background: black;
+}
+
+#forecast-container::-webkit-scrollbar {
+  height: 20px; /* width of scrollbar */
+}
+
+#forecast-container::-webkit-scrollbar-thumb {
+  background: #c61818;
+  border-radius: 10px;
 }
 
 .forecast-item {
@@ -245,5 +299,5 @@ a:hover {
 .forecast-date {
     margin-top: 5px;
     font-size: 10px;
-    color: #888;
+    color: rgba(255, 255, 255, 0.85);
 }

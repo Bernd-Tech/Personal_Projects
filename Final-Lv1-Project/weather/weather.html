@@ -24,33 +24,66 @@
             <div id="user-input-container">
                 <input id="user-input" class="glass-effect" type="text" placeholder="Enter city...">
             </div>
-
-            <div id="weather-display-container" class="black-glass-effect">
-                <h1 id="city-title"></h1>
-                <div class="current-weather">
-                    <div class="weather-main">
-                        <div id="current-weather-icon-container"><img id="current-weather-icon" src="" alt=""></div>
-                        <div id="current-temperature"></div>
-                        <div id="current-weather-description"></div>
+            <div id="weather-display-container">
+                <div id="first-half">
+                    <div id="city-title-div" class="black-glass-effect">
+                        <h1 id="city-title"></h1>
                     </div>
-        
-                    <div id="weather-details-container">
-                        <div class="detail-item">
-                            <div class="detail-icon"><img src="https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/raindrop.svg" alt="waterdrop"></div>
-                            <p id="relative-humidity"></p>
+            <div id="current-weather-container" class="black-glass-effect">
+                <div class="current-weather">
+                    <div id="main-weather">
+                        <div id="current-weather-icon-container"><img id="current-weather-icon" src="" alt=""></div>
+                        <div id="current-weather-info">
+                            <div id="current-temperature"></div>
+                            <div id="current-weather-description"></div>
                         </div>
+                    </div>
+    
+                    <div id="weather-details-container">
+                        <!-- Could dynamically create the detail items, but leaving that for another time -->
+                        <div class="detail-item-container">
+                        <p>Apparent Temperature:</p>
                         <div class="detail-item">
-                            <div class="detail-icon"><img id="wind-beaufort" src="https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/wind.svg" alt="wind-strength"></div>
+                            <div class="detail-icon"><img id="apparent-temperature-icon"></div>
+                            <span id="apparent-temperature"></span>
+                        </div>
+                        </div>
+                        <div class="detail-item-container">
+                        <p>Wind:</p>
+                        <div class="detail-item">
+                            <div class="detail-icon"><img id="wind-beaufort-icon"></div>
                             <span id="wind-speed"></span>
                         </div>
-                    </div>
-                </div>
-                <div class="forecast-section">
-                    <h2>Daily Forecast</h2>
-                    <div id="forecast-container">
+                        </div>
+                        <div class="detail-item-container">
+                        <p>Surface Pressure:</p>
+                        <div class="detail-item">
+                            <div class="detail-icon"><img id="surface-pressure-icon"></div>
+                            <span id="surface-pressure"></span>
+                        </div>
+                        </div>
+                        <div class="detail-item-container">
+                        <p>Relative Humidity:</p>
+                        <div class="detail-item">
+                            <div class="detail-icon"><img id="relative-humidity-icon" src="https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/raindrop.svg" alt="waterdrop"></div>
+                            <p id="relative-humidity"></p>
+                        </div>
+                        </div>
                         
                     </div>
                 </div>
+                
+                </div>                    
+                </div>
+                    <div class="forecast-section black-glass-effect">
+                    <h2 id="forecast-heading"></h2>
+                    <div id="forecast-container">
+                        
+                        
+                    </div>                
+                </div>
+                
+            </div>
             </div>
         </div>
     </div>
